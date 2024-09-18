@@ -1,0 +1,53 @@
+# Sistema de arquivos do Mac
+.DS_Store
+
+# Diretórios do ambiente virtual
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Arquivos compilados do Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.sqlite3
+
+# Arquivos de log e outros arquivos temporários
+*.log
+*.pot
+*.py[cod]
+*.coverage
+.coverage.*
+.cache
+coverage.xml
+nosetests.xml
+*.cover
+.hypothesis/
+*.mo
+*.swp
+*~
+
+# Arquivos de banco de dados local (SQLite)
+db.sqlite3
+db.sqlite3-journal
+
+# Mídia de desenvolvimento
+media/
+staticfiles/
+
+# Pastas do Node.js
+node_modules/
+npm-debug.log
+
+# Arquivos criados pelo Django
+static/
+
+# Configurações locais
+.env
+
+# Arquivos de migração do Django
+*/migrations/*.py
+!*/migrations/__init__.py

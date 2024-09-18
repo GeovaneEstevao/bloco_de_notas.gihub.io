@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Usuário</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    {% extends 'base/base.html' %}
+    {% block content %}
+    <br/>
+
+    <div class="container">
+        <h1>Dashboard do Usuário</h1>
+        <div class="user-info">
+            <p><strong>Nome:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+        <label for="toggle-password-form" class="toggle-btn">Alterar Senha <i class="fa-solid fa-lock"></i></label>
+        <input type="checkbox" id="toggle-password-form" />
+        <div class="form-section hidden">
+            <h2>Alterar Senha</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <label for="old_password">Senha Atual:</label>
+                <input type="password" id="old_password" name="old_password" required>
+                
+                <label for="new_password">Nova Senha:</label>
+                <input type="password" id="new_password" name="new_password" required>
+                
+                <label for="confirm_password">Confirmar Nova Senha:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+                
+                <button type="submit">Alterar Senha</button>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

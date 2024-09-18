@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+
+            <!-- Exibir erros gerais do formulário -->
+            {% if form.non_field_errors %}
+                <div class="error-message">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
+            <!-- Renderizar manualmente cada campo do formulário -->
+            <div>
+                <label for="{{ form.username.id_for_label }}">Nome de usuário:</label>
+                <input type="text" name="{{ form.username.name }}" id="{{ form.username.id_for_label }}" value="{{ form.username.value }}" class="{% if form.username.errors %}error{% endif %}">
+                {% if form.username.errors %}
+                    <div class="error-message">
+                        {{ form.username.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div>
+                <label for="{{ form.password.id_for_label }}">Senha:</label>
+                <input type="password" name="{{ form.password.name }}" id="{{ form.password.id_for_label }}" class="{% if form.password.errors %}error{% endif %}">
+                {% if form.password.errors %}
+                    <div class="error-message">
+                        {{ form.password.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <button type="submit">Entrar</button>
+        </form>
+        <p>Não tem uma conta? <a href="{% url 'cadastrar' %}">Cadastra-se</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/note_lis.css' %}">
+    <title>Nota</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Minhas Notas</h2>
+
+    <!-- Formulário sem o uso de {{ form }} para personalizar os inputs -->
+    <form method="POST">
+      {% csrf_token %}
+      <label for="title">Título</label>
+      <input type="text" id="title" name="title" value="{{ form.title.value }}" placeholder="Digite o título da nota" required>
+  
+      <label for="content">Conteúdo</label>
+      <textarea id="content" name="content" rows="5" placeholder="Digite o conteúdo da nota" required>{{ form.content.value }}</textarea>
+      <a href="{% url 'home' %}" class="bottom_home">Home</a>
+      {% if note %}
+          <button type="submit" name="edit_note">Salvar alterações</button>
+          <button type="submit" name="delete_note" class="delete-button" onclick="return confirm('Tem certeza que deseja excluir esta nota?');">Excluir nota</button>
+      {% else %}
+          <button type="submit" name="create_note">Criar nota</button>
+      {% endif %}
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+    {% extends 'base/base.html' %}
+    
+        {% block content %}
+        <!-- Exibe mensagens do sistema -->
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    
+        <h2 style="padding-left: 20px;">Minhas Notas</h2>
+    
+        <!-- Verifica se o usuário está autenticado -->
+        {% if user.is_authenticated %}
+            <div class="note-container">
+                <!-- Se o usuário tiver notas -->
+                {% if user_notes %}
+                    {% for note in user_notes %}
+                        <div class="note-box">
+                            <a href="{% url 'edit_note' note.id %}" style="color: white; padding: 10px; display: block;">{{ note.title }}</a>
+                        </div>
+                    {% endfor %}
+                <!-- Se não houver notas -->
+                {% else %}
+                    <p style="padding-left: 20px;">Você ainda não tem notas.</p>
+                {% endif %}
+            </div>
+            
+            <!-- Link para criar nota se o usuário estiver autenticado -->
+            <a href="{% url 'note_lista' %}" class="add-note" style="margin: 25px;">Adicionar Nota</a>
+        {% else %}
+            <!-- Se o usuário não estiver autenticado -->
+            <p style="padding-left: 20px;">Faça <a href="{% url 'login' %}">login</a> para criar e visualizar suas notas.</p>
+        {% endif %}
+        {% endblock %}
+    
+
