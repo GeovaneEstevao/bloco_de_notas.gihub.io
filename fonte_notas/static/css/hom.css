@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #adacac;
+}
+header img {
+    width: 190px;
+    height: 100px;
+}
+.bottom_home{
+    padding: 10px;
+    background-color: #424242;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+header nav ul li {
+    margin-left: 20px;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+.add-note {
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+.user-icon {
+    font-size: 24px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* \/\/\/ Area que mexe com o conteiner das notas \/\/\/ */
+.note-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.note-box {
+    background-color: #333;
+    height: 150px;
+    border-radius: 5px;
+}
+/* /\/\/\ Area que mexe com o conteiner das notas /\/\/\ */
+
+.messages {
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+    padding: 10px;
+    margin: 20px;
+}
+.messages li {
+    list-style-type: none;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-top: 1px solid #adacac;
+}

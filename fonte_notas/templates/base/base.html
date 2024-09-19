@@ -18,6 +18,7 @@
                 <li><a href="#" class="add-note">Favoritos</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'user_dashboard' %}" style="font-size: 30px;"><i class="fa-solid fa-user"></i></a></li>
+                    {{ user }}
                     <li><a href="{% url 'logout' %}">Sair</a></li>
                 {% else %}
                     <li><a href="{% url 'login' %}" ><i class="fa-solid fa-user" style="font-size: 30px;"></i></a></li>
@@ -36,7 +37,7 @@
     <br/>
     <footer>
         <!-- Rodapé do site -->
-        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Note4me. Todos os direitos reservados.</p>
     </footer>
     
 </body>

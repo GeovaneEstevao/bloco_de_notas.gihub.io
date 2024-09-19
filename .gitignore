@@ -43,7 +43,6 @@ node_modules/
 npm-debug.log
 
 # Arquivos criados pelo Django
-static/
 
 # Configurações locais
 .env

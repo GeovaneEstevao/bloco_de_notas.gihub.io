@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #333;
+}
+.user-info {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #e9ecef;
+    border-radius: 5px;
+}
+.user-info p {
+    margin: 5px 0;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+.form-section {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+.form-section.hidden {
+    display: none;
+}
+.form-section h2 {
+    margin-bottom: 10px;
+}
+.form-section form {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.form-section form label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-section form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-section form button {
+    background-color: #28a745;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.form-section form button:hover {
+    background-color: #218838;
+}
+.toggle-btn {
+    display: inline-block;
+    padding: 10px;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: underline;
+    border: none;
+    background: none;
+}
+.toggle-btn:hover {
+    color: #0056b3;
+}
+/* CSS-only toggle */
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"]:checked + .form-section {
+    display: block;
+}
